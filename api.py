@@ -5,12 +5,16 @@ from typing import Dict
 import joblib
 import pandas as pd
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
 
 MODEL_PATH = Path("models/model.joblib")
 FEATURES_PATH = Path("models/features.json")
+FRONTEND_DIR = Path(__file__).resolve().parent / "frontend"
 
 app = FastAPI(title="Heart Disease Prediction API", version="1.0.0")
+app.mount("/assets", StaticFiles(directory=FRONTEND_DIR), name="assets")
 
 if MODEL_PATH.exists() and FEATURES_PATH.exists():
     model = joblib.load(MODEL_PATH)
@@ -22,6 +26,11 @@ else:
 
 class PredictionRequest(BaseModel):
     features: Dict[str, float]
+
+
+@app.get("/app", include_in_schema=False)
+def frontend():
+    return FileResponse(FRONTEND_DIR / "index.html")
 
 
 @app.get("/")

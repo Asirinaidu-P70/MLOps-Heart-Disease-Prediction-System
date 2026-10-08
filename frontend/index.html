@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta name="description" content="Explore a heart health prediction demo using clinical measurements and a machine learning model.">
+  <title>HeartCare | Heart health, understood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/app#home" aria-label="HeartCare home">
+        <span class="brand-mark" aria-hidden="true">&hearts;</span>
+        <span>HeartCare</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/app#home">Home</a>
+        <a href="/app#approach">About</a>
+        <a href="/app#prediction">Prediction</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-rule"></span>A clearer view of your heart health</p>
+        <h1 id="hero-title">Know your<br>heart health.</h1>
+        <p class="hero-lede">A few familiar health measurements can offer a starting point for a more informed conversation about your heart.</p>
+        <a class="button button-primary" href="#prediction">Explore your profile <span aria-hidden="true">&rarr;</span></a>
+        <p class="hero-caption">A simple, private demonstration. No account needed.</p>
+      </div>
+      <figure class="hero-figure" aria-label="AI health analytics illustration">
+        <svg viewBox="0 0 640 480" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="panelGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#f3e8df"/>
+              <stop offset="100%" stop-color="#e9d5c7"/>
+            </linearGradient>
+            <linearGradient id="panelAccent" x1="0%" x2="100%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#6b1e2b"/>
+              <stop offset="100%" stop-color="#d99a72"/>
+            </linearGradient>
+          </defs>
+          <rect x="54" y="58" width="520" height="330" rx="28" fill="#fbf7f2"/>
+          <rect x="84" y="96" width="200" height="245" rx="22" fill="url(#panelGlow)"/>
+          <rect x="312" y="96" width="220" height="108" rx="18" fill="#f4ede8"/>
+          <rect x="312" y="220" width="220" height="120" rx="18" fill="#f8f3ee"/>
+          <circle cx="154" cy="170" r="44" fill="#e7d6cb"/>
+          <path d="M131 214c18-24 52-24 70 0v50H131v-50Z" fill="#6b1e2b" opacity="0.9"/>
+          <rect x="118" y="160" width="72" height="18" rx="9" fill="#f7f0ea"/>
+          <rect x="128" y="192" width="52" height="9" rx="4.5" fill="#f7f0ea" opacity="0.8"/>
+          <path d="M116 258c28-22 78-22 110 0" fill="none" stroke="#6b1e2b" stroke-width="8" stroke-linecap="round"/>
+          <path d="M332 132h116" stroke="#d2b9a8" stroke-width="8" stroke-linecap="round"/>
+          <path d="M332 156h88" stroke="#d2b9a8" stroke-width="8" stroke-linecap="round"/>
+          <path d="M332 188h110" stroke="#d2b9a8" stroke-width="8" stroke-linecap="round"/>
+          <rect x="332" y="246" width="150" height="12" rx="6" fill="#d8c7b5"/>
+          <rect x="332" y="272" width="118" height="12" rx="6" fill="#d8c7b5"/>
+          <rect x="332" y="298" width="138" height="12" rx="6" fill="#d8c7b5"/>
+          <path d="M500 130c0-26-18-42-43-42-21 0-34 11-41 28 15 8 26 23 26 42 0 6-1 12-3 18 17 19 39 11 61 0-1-14 0-25 0-46Z" fill="url(#panelAccent)" opacity="0.9"/>
+          <path d="M456 196c25-27 68 12 58 50-11 42-59 60-87 26-9-10-14-24-14-39 0-17 16-27 43-37Z" fill="#f5d1bd" opacity="0.8"/>
+          <path d="M494 188c20 0 37 14 43 35 0 2 0 4 0 6-17 12-36 20-58 24-12-11-20-30-18-48 2-18 16-32 33-35Z" fill="#6b1e2b" opacity="0.9"/>
+        </svg>
+        <figcaption><span>HEART HEALTH, IN CONTEXT</span><span>01 / 03</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="approach section-wrap" id="approach" aria-labelledby="approach-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow-rule"></span>A considered first step</p>
+        <h2 id="approach-title">Understand the process.</h2>
+        <p>Clear inputs. A measured result. Always in context.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 8.5A2.5 2.5 0 0 1 8.5 6h7A2.5 2.5 0 0 1 18 8.5v7A2.5 2.5 0 0 1 15.5 18h-7A2.5 2.5 0 0 1 6 15.5v-7Zm2.5 0h7m-7 3h7m-7 3h4"/></svg>
+          </div>
+          <span class="step-number">01</span>
+          <h3>Enter your information</h3>
+          <p>Add the measurements and findings requested in the form. Example values are provided to make a first try easy.</p>
+        </article>
+        <article class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10 18a8 8 0 1 1 5.3-13.7A8 8 0 0 1 10 18Zm0-5.5 3.5-3.5M10 12.5V8m0 0h4"/></svg>
+          </div>
+          <span class="step-number">02</span>
+          <h3>Review the pattern</h3>
+          <p>A trained model looks at the values together and returns a predicted class and its model score.</p>
+        </article>
+        <article class="step">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 13.5 10 16l7-9m-1.5 13h-9A2.5 2.5 0 0 1 4 17V7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5V17A2.5 2.5 0 0 1 17.5 19h-9Z"/></svg>
+          </div>
+          <span class="step-number">03</span>
+          <h3>See your result</h3>
+          <p>Read the result as a demonstration, not a diagnosis or a substitute for care from a health professional.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="prediction-section" id="prediction" aria-labelledby="prediction-title">
+      <div class="prediction-inner">
+        <div class="prediction-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-rule"></span>Heart profile</p>
+            <h2 id="prediction-title">A few details, a clearer picture.</h2>
+          </div>
+          <p class="heading-note">Enter the values below to see how this demonstration model reads your profile.</p>
+        </div>
+
+        <form id="prediction-form">
+          <fieldset class="field-group">
+            <legend><span class="legend-number">01</span> About you</legend>
+            <div class="field-grid field-grid-two">
+              <label class="field">
+                <span>Age <span class="unit">years</span></span>
+                <input name="age" type="number" min="1" max="120" step="1" value="52" required>
+              </label>
+              <label class="field">
+                <span>Sex recorded in the dataset</span>
+                <select name="sex" required>
+                  <option value="0">0 &mdash; Female</option>
+                  <option value="1" selected>1 &mdash; Male</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field-group">
+            <legend><span class="legend-number">02</span> Measurements</legend>
+            <div class="field-grid field-grid-three">
+              <label class="field">
+                <span>Resting blood pressure <span class="unit">mm Hg</span></span>
+                <input name="trestbps" type="number" min="50" max="260" step="1" value="130" required>
+              </label>
+              <label class="field">
+                <span>Serum cholesterol <span class="unit">mg/dL</span></span>
+                <input name="chol" type="number" min="50" max="700" step="1" value="250" required>
+              </label>
+              <label class="field">
+                <span>Maximum heart rate</span>
+                <input name="thalach" type="number" min="40" max="260" step="1" value="150" required>
+              </label>
+              <label class="field">
+                <span>Fasting blood sugar above 120 mg/dL</span>
+                <select name="fbs" required>
+                  <option value="0" selected>0 &mdash; No</option>
+                  <option value="1">1 &mdash; Yes</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="label-row"><span>ST depression <span class="unit">oldpeak</span></span><button class="tooltip-trigger" type="button" aria-label="Explain ST depression">?</button></span>
+                <span class="tooltip" role="tooltip">ST depression measures the drop in an ECG trace during exercise, helping clinicians compare heart strain patterns.</span>
+                <input name="oldpeak" type="number" min="0" max="7" step="0.1" value="1.2" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field-group">
+            <legend><span class="legend-number">03</span> Clinical findings</legend>
+            <div class="field-grid field-grid-three">
+              <label class="field">
+                <span>Chest pain type</span>
+                <select name="cp" required>
+                  <option value="1" selected>1 &mdash; Typical angina</option>
+                  <option value="2">2 &mdash; Atypical angina</option>
+                  <option value="3">3 &mdash; Non-anginal pain</option>
+                  <option value="4">4 &mdash; Asymptomatic</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Resting ECG result</span>
+                <select name="restecg" required>
+                  <option value="0">0 &mdash; Normal</option>
+                  <option value="1" selected>1 &mdash; ST-T abnormality</option>
+                  <option value="2">2 &mdash; Ventricular hypertrophy</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Exercise-induced angina</span>
+                <select name="exang" required>
+                  <option value="0" selected>0 &mdash; No</option>
+                  <option value="1">1 &mdash; Yes</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Peak exercise ST slope</span>
+                <select name="slope" required>
+                  <option value="1" selected>1 &mdash; Upsloping</option>
+                  <option value="2">2 &mdash; Flat</option>
+                  <option value="3">3 &mdash; Downsloping</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Major vessels shown <span class="unit">0&ndash;3</span></span>
+                <select name="ca" required>
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="label-row"><span>Thalassemia result <span class="unit">dataset code</span></span><button class="tooltip-trigger" type="button" aria-label="Explain thalassemia result">?</button></span>
+                <span class="tooltip" role="tooltip">The thalassemia code describes the blood-cell pattern seen in the dataset and can indicate inherited red-blood-cell disorders.</span>
+                <select name="thal" required>
+                  <option value="2" selected>2 &mdash; Example value</option>
+                  <option value="3">3 &mdash; Normal</option>
+                  <option value="6">6 &mdash; Fixed defect</option>
+                  <option value="7">7 &mdash; Reversible defect</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <p class="form-note">Use values from a health record where possible. All fields are required for this demo.</p>
+            <div class="button-stack">
+              <button class="button button-secondary" id="demo-button" type="button">View Positive Prediction Example</button>
+              <button class="button button-primary" id="submit-button" type="submit">View prediction <span aria-hidden="true">&rarr;</span></button>
+            </div>
+          </div>
+          <p class="form-note demo-note">Fictional demonstration data — not a real patient and not a medical diagnosis.</p>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+        </form>
+
+        <section class="result" id="result" aria-labelledby="result-title" aria-live="polite" hidden>
+          <div class="result-copy">
+            <p class="eyebrow"><span class="eyebrow-rule"></span>Your result</p>
+            <h3 id="result-title">Prediction</h3>
+            <p id="result-message"></p>
+            <p class="result-disclaimer" id="result-note"></p>
+          </div>
+          <div class="result-score">
+            <span class="score-label">Model score for class 1</span>
+            <strong id="score-value">&mdash;</strong>
+            <div class="score-track" role="img" aria-label="Model score for class 1">
+              <span class="score-fill" id="score-fill"></span>
+            </div>
+            <span class="score-caption">This score is not a personal probability of disease.</span>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand footer-brand" href="/app#home"><span class="brand-mark" aria-hidden="true">&hearts;</span><span>HeartCare</span></a>
+        <p>A heart disease prediction project, built for learning and careful exploration.</p>
+      </div>
+      <div class="footer-tech" aria-label="Technology stack">
+        <span class="tech-logo" aria-label="Scikit-learn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5h8.5A3.5 3.5 0 0 1 17 9v2.5H9A4 4 0 0 0 5 15.5V18h14v1.5H4.5V5.5H5Zm8 0v7h2.5V9A3.5 3.5 0 0 0 13 5.5Z"/><path d="M13 12h6v1.5H13z"/></svg>
+          <span>scikit</span>
+        </span>
+        <span class="tech-logo" aria-label="MLflow">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8Zm1.1 4.2h-2.2v7.7h2.2V8.2Zm-3.1 3.3h-2v4.4h2v-4.4Zm6.1 0h-2v4.4h2v-4.4Z"/></svg>
+          <span>MLflow</span>
+        </span>
+        <span class="tech-logo" aria-label="DVC">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 4.5 7l7.5 4.2L19.5 7 12 2.8Zm-7.5 7.3L12 14.3l7.5-4.2v4.9L12 20.9 4.5 15v-4.9Z"/></svg>
+          <span>DVC</span>
+        </span>
+        <span class="tech-logo" aria-label="Evidently">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17.5A2.5 2.5 0 0 1 8.5 15H16v-2.5H8.5A2.5 2.5 0 0 0 6 15v2.5Zm0-8A2.5 2.5 0 0 1 8.5 7H16V4.5H8.5A2.5 2.5 0 0 0 6 7v2.5ZM18 9h-4.5A2.5 2.5 0 0 0 11 11.5V15h1.5v-3.5H18V9Z"/></svg>
+          <span>Evidently</span>
+        </span>
+        <span class="tech-logo" aria-label="FastAPI">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.5 12 4l8.5 7.5-8.5 8.5L3.5 11.5Zm8.5-3.7 4.1 5.3H13l1.3 4.2-5.5-6h2.8l-1.4-3.5Z"/></svg>
+          <span>FastAPI</span>
+        </span>
+      </div>
+      <p class="footer-disclaimer">For demonstration only. Not medical advice.</p>
+    </div>
+  </footer>
+</body>
+</html>

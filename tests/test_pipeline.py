@@ -18,6 +18,17 @@ def load_example_request():
     return json.loads((PROJECT_ROOT / "example_request.json").read_text())
 
 
+def test_frontend_page_and_assets_are_served():
+    page = client.get("/app")
+    stylesheet = client.get("/assets/styles.css")
+    script = client.get("/assets/app.js")
+
+    assert page.status_code == 200
+    assert "Know your<br>heart health." in page.text
+    assert stylesheet.status_code == 200
+    assert script.status_code == 200
+
+
 def test_model_files_can_be_loaded():
     model_path = PROJECT_ROOT / "models" / "model.joblib"
     features_path = PROJECT_ROOT / "models" / "features.json"
