@@ -1,0 +1,51 @@
+name: Heart Disease MLOps Pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/heart.csv'
+      - 'src/**'
+      - 'api.py'
+      - 'requirements.txt'
+  workflow_dispatch:
+
+jobs:
+  train-monitor-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download dataset if missing
+        run: python src/download_data.py
+
+      - name: Train model
+        run: python src/train.py
+
+      - name: Create new-data sample
+        run: python src/make_new_data.py
+
+      - name: Run drift monitoring
+        run: python src/monitor.py
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Upload model and reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlops-artifacts
+          path: |
+            models/
+            reports/drift_report.html
+            reports/reference_data.csv
+            mlflow.db

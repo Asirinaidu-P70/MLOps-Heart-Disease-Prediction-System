@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+mlruns/
+mlflow.db
+.pytest_cache/
+.vscode/
+dvc_storage/
+
+# Generated training and monitoring outputs
+data/new_data.csv
+models/model.joblib
+models/features.json
+models/model_info.json
+reports/drift_report.html
+reports/reference_data.csv
